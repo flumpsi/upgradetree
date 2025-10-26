@@ -1,6 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
-upgradetree.sh
-upgradetree.x86_64
-upgradetree.exe
+bin/
