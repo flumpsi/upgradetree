@@ -10,10 +10,10 @@ var multiplier = 1.0
 var reset = false
 
 func _process(dt):
-	var tuffDisplay = get_node("TuffPointDisplay")
-	var sixSevenDisplay = get_node("67PointDisplay")
-	tuffDisplay.text = "Tuff: " + str(int(tuff))
-	sixSevenDisplay.text = "67: " + str(sixSeven)
+	var tuffDisplay = get_node("TuffPointDisplay") # Set variables for labels for easier access
+	var sixSevenDisplay = get_node("67PointDisplay") # same here
+	tuffDisplay.text = "Tuff: " + str(int(tuff)) # Display text
+	sixSevenDisplay.text = "67: " + str(sixSeven) # Also display text
 
 func _on_played_timeout() -> void:
 	var lbl = get_node("TimePlayedDisplay")

@@ -19,15 +19,15 @@ func _on_pressed() -> void:
 		var timer = get_node("Timer")
 		timer.start()
 		firsttime = false
-		purchased = true
-		self.disabled = true
+		purchased = true # this currently does nothing
+		self.disabled = true # disable button so it cannot be clicked anymore
 		get_parent().tuff -=price
 	else:
 		print("poor")
 
 func _on_timer_timeout() -> void:
 	# note, ^ is ** in gdscript
-	get_parent().perSecondX += min(get_parent().tuff ** 0.16, 1) # Use + for tuff boost itself math func
+	get_parent().perSecondX += min(get_parent().tuff ** 0.16, 1) # Use + for tuff boost itself math func. This is also a shit line of code, could be way better
 	# get_parent().perSecondX *= min(get_parent().tuff ** 0.16, 1) # Or use * for tuff boost itself math func,
 	# this one does nothing as result is just 1 and it is very self-explanatory what multiplication with 1x does.
 	# get_parent().perSecondX *= get_parent().tuff ** 0.16 # You also have this one which just gives a insane amount of tuff.

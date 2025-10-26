@@ -17,8 +17,8 @@ func _on_pressed() -> void:
 		var timer = get_node("Timer")
 		timer.start()
 		firsttime = false
-		purchased = true
-		self.disabled = true
+		purchased = true # this currently does nothing
+		self.disabled = true # disable button so it cannot be clicked anymore
 		get_parent().sixSeven += (0.1*floor(get_parent().tuff / timegive))
 		get_parent().reset = true
 		get_parent().perSecondX = 0

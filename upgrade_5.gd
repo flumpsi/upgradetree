@@ -12,8 +12,8 @@ func _ready():
 func _on_pressed() -> void:
 	if firsttime == true and get_parent().sixSeven >= price:
 		firsttime = false
-		purchased = true
-		self.disabled = true
+		purchased = true # this currently does nothing
+		self.disabled = true # disable button so it cannot be clicked anymore
 		var timer = get_node("Timer")
 		timer.start()
 		get_parent().sixSeven -= price

@@ -129,9 +129,9 @@ text = "Price: Minimum 10k"
 
 [node name="Math" type="Label" parent="Upgrade5/Description"]
 layout_mode = 0
-offset_left = 8.0
+offset_left = 37.0
 offset_top = 55.0
-offset_right = 108.0
+offset_right = 137.0
 offset_bottom = 78.0
 theme_override_font_sizes/font_size = 12
 text = "(+0.1/s)"
@@ -229,7 +229,7 @@ offset_left = 23.0
 offset_top = 524.0
 offset_right = 135.0
 offset_bottom = 549.0
-text = "Build: 202510267"
+text = "Build: 202510269"
 
 [connection signal="pressed" from="Upgrade1" to="Upgrade1" method="_on_pressed"]
 [connection signal="timeout" from="Upgrade1/Timer" to="Upgrade1" method="_on_timer_timeout"]
