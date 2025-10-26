@@ -19,7 +19,7 @@ func _on_pressed() -> void:
 		firsttime = false
 		purchased = true
 		self.disabled = true
-		get_parent().perSecondX *= 2
+		get_parent().multiplier *= 2
 		print(get_parent().tuff)
 		get_parent().tuff -=price
 	else:

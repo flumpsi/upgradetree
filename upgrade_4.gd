@@ -19,7 +19,7 @@ func _on_pressed() -> void:
 		firsttime = false
 		purchased = true
 		self.disabled = true
-		get_parent().sixSeven = (0.1*floor(get_parent().tuff / timegive))
+		get_parent().sixSeven += (0.1*floor(get_parent().tuff / timegive))
 		get_parent().reset = true
 		get_parent().perSecondX = 0
 		get_parent().tuff = 0

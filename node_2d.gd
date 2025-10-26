@@ -1,9 +1,12 @@
 extends Node2D
 
 var tuff = 10000.0
-var sixSeven = 0.0
+var sixSeven = 6.7
+
 var timePlayed = 0.0
-var perSecondX = 1.0
+var perSecondX = basePerSecondX
+var basePerSecondX = 1.0
+var multiplier = 1.0
 var reset = false
 
 func _process(dt):
