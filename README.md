@@ -9,3 +9,10 @@ Incremental type game created in godot.
 *Open godot, import project and then press project export export all*
 
 Binaries are now in bin/
+
+
+## **Todo**
+
+- [] Add 3x gain
+- [] Add 5x gain
+- [] Add clicker thing
