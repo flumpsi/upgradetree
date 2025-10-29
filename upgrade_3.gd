@@ -11,6 +11,8 @@ func _ready():
 
 func _process(dt):
 	if get_parent().reset == true:
+		var timer = get_node("Timer")
+		timer.stop()
 		firsttime = true
 		self.disabled = false
 

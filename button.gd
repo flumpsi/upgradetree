@@ -8,8 +8,11 @@ func _ready():
 
 func _process(dt):
 	if get_parent().reset == true:
+		var timer = get_node("Timer")
 		firsttime = true
+		get_parent().multiplier = 1.0
 		self.disabled = false
+		timer.stop()
 
 func _on_pressed() -> void:
 	if firsttime == true:
