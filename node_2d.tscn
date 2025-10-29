@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dn24vabxxuoyk"]
+[gd_scene load_steps=8 format=3 uid="uid://dn24vabxxuoyk"]
 
 [ext_resource type="Script" uid="uid://c5e6gv87mfeap" path="res://node_2d.gd" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://bjbtg7vmgu5co" path="res://button.gd" id="1_wtcfe"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://7xldj65ejr16" path="res://upgrade_3.gd" id="3_epypp"]
 [ext_resource type="Script" uid="uid://dj1g06x271b8k" path="res://upgrade_4.gd" id="3_q6r6c"]
 [ext_resource type="Script" uid="uid://c3rmlwxod4p8t" path="res://upgrade_5.gd" id="4_kdubu"]
+[ext_resource type="Script" uid="uid://cogvnuy2os55b" path="res://upgrade_6.gd" id="7_d21ai"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_0e48y")
@@ -83,18 +84,19 @@ text = "Turn tuff into 67"
 [node name="Description" type="Label" parent="Upgrade4"]
 layout_mode = 0
 offset_left = 2.0
-offset_top = 34.0
+offset_top = 15.0
 offset_right = 124.0
-offset_bottom = 57.0
+offset_bottom = 52.0
 theme_override_font_sizes/font_size = 12
-text = "Price: Minimum 10k"
+text = "Price: Minimum 10k
+ tuff"
 
 [node name="Math" type="Label" parent="Upgrade4/Description"]
 layout_mode = 0
 offset_left = 8.0
-offset_top = 55.0
+offset_top = 75.0
 offset_right = 108.0
-offset_bottom = 78.0
+offset_bottom = 98.0
 theme_override_font_sizes/font_size = 12
 text = "(10k tuff = 0.1 67)"
 
@@ -125,7 +127,7 @@ offset_top = 34.0
 offset_right = 124.0
 offset_bottom = 57.0
 theme_override_font_sizes/font_size = 12
-text = "Price: Minimum 10k"
+text = "Price: 0.5 six seven"
 
 [node name="Math" type="Label" parent="Upgrade5/Description"]
 layout_mode = 0
@@ -231,6 +233,44 @@ offset_right = 135.0
 offset_bottom = 549.0
 text = "Build: 202510269"
 
+[node name="Upgrade6" type="Button" parent="."]
+offset_left = 365.0
+offset_top = 66.0
+offset_right = 490.0
+offset_bottom = 191.0
+theme_override_font_sizes/font_size = 16
+text = "67 3"
+script = ExtResource("7_d21ai")
+
+[node name="Price" type="Label" parent="Upgrade6"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 72.0
+offset_right = 124.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 12
+text = "2x 67 gain"
+
+[node name="Description" type="Label" parent="Upgrade6"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 34.0
+offset_right = 124.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 12
+text = "Price: 10 six seven"
+
+[node name="Math" type="Label" parent="Upgrade6/Description"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 55.0
+offset_right = 137.0
+offset_bottom = 78.0
+theme_override_font_sizes/font_size = 12
+text = "(67gain*2)"
+
+[node name="Timer" type="Timer" parent="Upgrade6"]
+
 [connection signal="pressed" from="Upgrade1" to="Upgrade1" method="_on_pressed"]
 [connection signal="timeout" from="Upgrade1/Timer" to="Upgrade1" method="_on_timer_timeout"]
 [connection signal="pressed" from="Upgrade4" to="Upgrade4" method="_on_pressed"]
@@ -242,3 +282,5 @@ text = "Build: 202510269"
 [connection signal="pressed" from="Upgrade3" to="Upgrade3" method="_on_pressed"]
 [connection signal="timeout" from="Upgrade3/Timer" to="Upgrade3" method="_on_timer_timeout"]
 [connection signal="timeout" from="TimePlayedCounter" to="." method="_on_played_timeout"]
+[connection signal="pressed" from="Upgrade6" to="Upgrade6" method="_on_pressed"]
+[connection signal="timeout" from="Upgrade6/Timer" to="Upgrade6" method="_on_timer_timeout"]
