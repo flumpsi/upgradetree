@@ -7,8 +7,6 @@ var price = 0.5
 func _ready():
 	firsttime = true
 
-
-
 func _on_pressed() -> void:
 	if firsttime == true and get_parent().sixSeven >= price:
 		firsttime = false
@@ -25,6 +23,6 @@ func _on_timer_timeout() -> void:
 	# get_parent().perSecondX += get_parent().sixSeven
 	
 	# This works i guess
-	get_parent().perSecondX = get_parent().basePerSecondX + (get_parent().sixSeven * get_parent().multiplier)
+	get_parent().multiplier += (get_parent().sixSeven / 10)
 	# print("six seven: " + str(get_parent().perSecondX + get_parent().sixSeven))
 	

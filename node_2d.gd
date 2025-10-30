@@ -1,7 +1,7 @@
 extends Node2D
 
-var tuff = 10000.0
-var sixSeven = 10.0
+var tuff = 0.0
+var sixSeven = 0.0
 
 var timePlayed = 0.0
 var perSecondX = basePerSecondX

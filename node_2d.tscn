@@ -212,7 +212,7 @@ offset_top = 55.0
 offset_right = 96.0
 offset_bottom = 78.0
 theme_override_font_sizes/font_size = 12
-text = "(tuff^0.16/s)"
+text = "(tuff=tuff/1000)"
 
 [node name="Timer" type="Timer" parent="Upgrade3"]
 
@@ -231,7 +231,7 @@ offset_left = 23.0
 offset_top = 524.0
 offset_right = 135.0
 offset_bottom = 549.0
-text = "Build: 202510269"
+text = "Version: v0.1.8"
 
 [node name="Upgrade6" type="Button" parent="."]
 offset_left = 365.0
