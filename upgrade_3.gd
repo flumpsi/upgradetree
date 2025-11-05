@@ -29,7 +29,7 @@ func _on_pressed() -> void:
 
 func _on_timer_timeout() -> void:
 	# note, ^ is ** in gdscript
-	get_parent().multiplier += (get_parent().tuff / 100) # Use + for tuff boost itself math func. This is also a shit line of code, could be way better
+	get_parent().gain2multiplier = (get_parent().tuff / 1000) # Use + for tuff boost itself math func. This is also a shit line of code, could be way better
 	# get_parent().perSecondX *= min(get_parent().tuff ** 0.16, 1) # Or use * for tuff boost itself math func,
 	# this one does nothing as result is just 1 and it is very self-explanatory what multiplication with 1x does.
 	# get_parent().perSecondX *= get_parent().tuff ** 0.16 # You also have this one which just gives a insane amount of tuff.

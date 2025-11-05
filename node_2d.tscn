@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dn24vabxxuoyk"]
+[gd_scene load_steps=10 format=3 uid="uid://dn24vabxxuoyk"]
 
 [ext_resource type="Script" uid="uid://c5e6gv87mfeap" path="res://node_2d.gd" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://bjbtg7vmgu5co" path="res://button.gd" id="1_wtcfe"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://dj1g06x271b8k" path="res://upgrade_4.gd" id="3_q6r6c"]
 [ext_resource type="Script" uid="uid://c3rmlwxod4p8t" path="res://upgrade_5.gd" id="4_kdubu"]
 [ext_resource type="Script" uid="uid://cogvnuy2os55b" path="res://upgrade_6.gd" id="7_d21ai"]
+[ext_resource type="Script" uid="uid://d1vfm1qkpv7na" path="res://upgrade_7.gd" id="8_rj586"]
+[ext_resource type="Script" uid="uid://b5c3xph2njm62" path="res://upgrade_8.gd" id="9_4d7sh"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_0e48y")
@@ -26,9 +28,9 @@ offset_bottom = 627.0
 text = "67: 0"
 
 [node name="Upgrade1" type="Button" parent="."]
-offset_left = 527.0
+offset_left = 379.0
 offset_top = 239.0
-offset_right = 652.0
+offset_right = 504.0
 offset_bottom = 364.0
 theme_override_font_sizes/font_size = 16
 text = "tuff 1"
@@ -64,9 +66,9 @@ text = "(1/s)"
 [node name="Timer" type="Timer" parent="Upgrade1"]
 
 [node name="Upgrade4" type="Button" parent="."]
-offset_left = 527.0
+offset_left = 379.0
 offset_top = 66.0
-offset_right = 652.0
+offset_right = 504.0
 offset_bottom = 191.0
 theme_override_font_sizes/font_size = 16
 text = "67 1"
@@ -103,9 +105,9 @@ text = "(10k tuff = 0.1 67)"
 [node name="Timer" type="Timer" parent="Upgrade4"]
 
 [node name="Upgrade5" type="Button" parent="."]
-offset_left = 683.0
+offset_left = 535.0
 offset_top = 66.0
-offset_right = 808.0
+offset_right = 660.0
 offset_bottom = 191.0
 theme_override_font_sizes/font_size = 16
 text = "67 2"
@@ -136,14 +138,14 @@ offset_top = 55.0
 offset_right = 137.0
 offset_bottom = 78.0
 theme_override_font_sizes/font_size = 12
-text = "(+0.1/s)"
+text = "(67/1000)"
 
 [node name="Timer" type="Timer" parent="Upgrade5"]
 
 [node name="Upgrade2" type="Button" parent="."]
-offset_left = 683.0
+offset_left = 535.0
 offset_top = 239.0
-offset_right = 808.0
+offset_right = 660.0
 offset_bottom = 364.0
 theme_override_font_sizes/font_size = 16
 text = "tuff 2"
@@ -179,12 +181,12 @@ text = "(x2)"
 [node name="Timer" type="Timer" parent="Upgrade2"]
 
 [node name="Upgrade3" type="Button" parent="."]
-offset_left = 365.0
+offset_left = 217.0
 offset_top = 239.0
-offset_right = 490.0
+offset_right = 342.0
 offset_bottom = 364.0
 theme_override_font_sizes/font_size = 16
-text = "tuff 3"
+text = "tuff 5"
 script = ExtResource("3_epypp")
 
 [node name="Price" type="Label" parent="Upgrade3"]
@@ -234,9 +236,9 @@ offset_bottom = 549.0
 text = "Version: v0.1.8"
 
 [node name="Upgrade6" type="Button" parent="."]
-offset_left = 365.0
+offset_left = 217.0
 offset_top = 66.0
-offset_right = 490.0
+offset_right = 342.0
 offset_bottom = 191.0
 theme_override_font_sizes/font_size = 16
 text = "67 3"
@@ -271,6 +273,82 @@ text = "(67gain*2)"
 
 [node name="Timer" type="Timer" parent="Upgrade6"]
 
+[node name="Upgrade7" type="Button" parent="."]
+offset_left = 695.0
+offset_top = 239.0
+offset_right = 820.0
+offset_bottom = 364.0
+theme_override_font_sizes/font_size = 16
+text = "tuff 3"
+script = ExtResource("8_rj586")
+
+[node name="Price" type="Label" parent="Upgrade7"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 72.0
+offset_right = 124.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 12
+text = "More tuff gain"
+
+[node name="Description" type="Label" parent="Upgrade7"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 34.0
+offset_right = 124.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 12
+text = "Price: 20 Tuff"
+
+[node name="Math" type="Label" parent="Upgrade7/Description"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 55.0
+offset_right = 73.0
+offset_bottom = 78.0
+theme_override_font_sizes/font_size = 12
+text = "(x3)"
+
+[node name="Timer" type="Timer" parent="Upgrade7"]
+
+[node name="Upgrade8" type="Button" parent="."]
+offset_left = 854.0
+offset_top = 239.0
+offset_right = 979.0
+offset_bottom = 364.0
+theme_override_font_sizes/font_size = 16
+text = "tuff 4"
+script = ExtResource("9_4d7sh")
+
+[node name="Price" type="Label" parent="Upgrade8"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 72.0
+offset_right = 124.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 12
+text = "More tuff gain"
+
+[node name="Description" type="Label" parent="Upgrade8"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 34.0
+offset_right = 124.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 12
+text = "Price: 50 Tuff"
+
+[node name="Math" type="Label" parent="Upgrade8/Description"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 55.0
+offset_right = 73.0
+offset_bottom = 78.0
+theme_override_font_sizes/font_size = 12
+text = "(x5)"
+
+[node name="Timer" type="Timer" parent="Upgrade8"]
+
 [connection signal="pressed" from="Upgrade1" to="Upgrade1" method="_on_pressed"]
 [connection signal="timeout" from="Upgrade1/Timer" to="Upgrade1" method="_on_timer_timeout"]
 [connection signal="pressed" from="Upgrade4" to="Upgrade4" method="_on_pressed"]
@@ -284,3 +362,7 @@ text = "(67gain*2)"
 [connection signal="timeout" from="TimePlayedCounter" to="." method="_on_played_timeout"]
 [connection signal="pressed" from="Upgrade6" to="Upgrade6" method="_on_pressed"]
 [connection signal="timeout" from="Upgrade6/Timer" to="Upgrade6" method="_on_timer_timeout"]
+[connection signal="pressed" from="Upgrade7" to="Upgrade7" method="_on_pressed"]
+[connection signal="timeout" from="Upgrade7/Timer" to="Upgrade7" method="_on_timer_timeout"]
+[connection signal="pressed" from="Upgrade8" to="Upgrade8" method="_on_pressed"]
+[connection signal="timeout" from="Upgrade8/Timer" to="Upgrade8" method="_on_timer_timeout"]

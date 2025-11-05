@@ -1,6 +1,6 @@
 extends Node2D
 
-var tuff = 0.0
+var tuff = 9999999.0
 var sixSeven = 0.0
 
 var timePlayed = 0.0
@@ -8,12 +8,13 @@ var perSecondX = basePerSecondX
 var perSecondXSixSeven = 1.0
 var basePerSecondX = 1.0
 var multiplier = 1.0
+var gain2multiplier = 1.0
 var reset = false
 
 func _process(dt):
 	var tuffDisplay = get_node("TuffPointDisplay") # Set variables for labels for easier access
 	var sixSevenDisplay = get_node("67PointDisplay") # same here
-	perSecondX = basePerSecondX * multiplier
+	perSecondX = basePerSecondX * gain2multiplier * multiplier
 	var suffixes = ["","K","M","B","T"]
 	var i = 0
 	var num = tuff

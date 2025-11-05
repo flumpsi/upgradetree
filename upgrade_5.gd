@@ -23,6 +23,6 @@ func _on_timer_timeout() -> void:
 	# get_parent().perSecondX += get_parent().sixSeven
 	
 	# This works i guess
-	get_parent().multiplier += (get_parent().sixSeven / 10)
+	get_parent().multiplier += (get_parent().sixSeven / 1000)
 	# print("six seven: " + str(get_parent().perSecondX + get_parent().sixSeven))
 	
