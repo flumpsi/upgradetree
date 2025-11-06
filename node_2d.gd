@@ -1,21 +1,29 @@
 extends Node2D
 
-var tuff = 9999999.0
-var sixSeven = 0.0
+var tuff = 9999999999.0
+var sixSeven = 100.0
+var adrenaline = 0.0
 
 var timePlayed = 0.0
 var perSecondX = basePerSecondX
 var perSecondXSixSeven = 1.0
 var basePerSecondX = 1.0
 var multiplier = 1.0
+var multiplierSixSeven = 1.0
 var gain2multiplier = 1.0
 var reset = false
 
 func _process(dt):
 	var tuffDisplay = get_node("TuffPointDisplay") # Set variables for labels for easier access
 	var sixSevenDisplay = get_node("67PointDisplay") # same here
-	perSecondX = basePerSecondX * gain2multiplier * multiplier
-	var suffixes = ["","K","M","B","T"]
+	var adrenalineDisplay = get_node("AdrenalinePointDisplay") # same here
+	perSecondX = basePerSecondX * gain2multiplier * multiplierSixSeven * multiplier
+	var suffixes = ["","K","M","B","T","Qa","Qn","Sx","Sp","Oc","No","De","Ude","DDe","TDe","QDe","QnDe","SxDe","SpDe","OcDe","NoDe","Vg","UVg","DVg","TVg","QVg","QnVg","SxVg","SpVg","OcVg", "NoVg","Tg","UTg", "DTg", "TTg", "QTg", "QnTg", "SxTg", "SpTg", "OcTg", "NoTg",
+"Qd", "UQd","DQd","TQd","QQd","QnQd","SxQd","SpQd","OcQd","NoQd", "QnD", "UQnD", "DQnD", "TQnD", "QQnD", "QnQnD", "SxQnD", "SpQnD", "OcQnD", "NoQnD",
+"SxD", "USxD", "DSxD", "TSxD", "QSxD", "QnSxD", "SxSxD", "SpSxD", "OcSxD", "NoSxD",
+"SpD", "USpD", "DSpD", "TSpD", "QSpD", "QnSpD", "SxSpD", "SpSpD", "OcSpD", "NoSpD",
+"OcD", "UOcD", "DOcD", "TOcD", "QOcD", "QnOcD", "SxOcD", "SpOcD", "OcOcD", "NoOcD",
+"NoD", "UNoD", "DNoD", "TNoD", "QNoD", "QnNoD", "SxNoD", "SpNoD", "OcNoD", "NoNoD"]
 	var i = 0
 	var num = tuff
 	while num >= 1000.0 and i < suffixes.size()-1:
@@ -36,6 +44,16 @@ func _process(dt):
 		textSixSeven = textSixSeven.substr(0,textSixSeven.length()-2)
 	textSixSeven += suffixes[i2]
 	sixSevenDisplay.text = "67: " + textSixSeven # Display text
+	var i3 = 0
+	var num3 = adrenaline
+	while num3 >= 1000.0 and i3 < suffixes.size()-1:
+		num3/=1000.0
+		i3+=1
+	var textAdrenaline = str(floor(num3*100+0.5)/100)
+	if textAdrenaline.ends_with(".0"):
+		textAdrenaline = textAdrenaline.substr(0,textAdrenaline.length()-2)
+	textAdrenaline += suffixes[i3]
+	adrenalineDisplay.text = "Adrenaline: " + textAdrenaline # Display text
 
 """func abbreviate_number(num: float) -> String:
 	var suffixes = ["", "K", "M", "B", "T"]

@@ -2,18 +2,18 @@ extends Button
 
 var firsttime
 var purchased
-var price = 0.5
+var price = 100
 
 func _ready():
 	firsttime = true
+	get_parent().get_node("Clicker").visible = false
 
 func _on_pressed() -> void:
 	if firsttime == true and get_parent().sixSeven >= price:
 		firsttime = false
 		purchased = true # this currently does nothing
 		self.disabled = true # disable button so it cannot be clicked anymore
-		var timer = get_node("Timer")
-		timer.start()
+		get_parent().get_node("Clicker").visible = true
 		get_parent().sixSeven -= price
 	else:
 		print("poor")
@@ -23,6 +23,6 @@ func _on_timer_timeout() -> void:
 	# get_parent().perSecondX += get_parent().sixSeven
 	
 	# This works i guess
-	get_parent().multiplierSixSeven += (get_parent().sixSeven / 1000)
+	get_parent().multiplier += (get_parent().sixSeven / 1000)
 	# print("six seven: " + str(get_parent().perSecondX + get_parent().sixSeven))
 	

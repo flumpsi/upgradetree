@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dn24vabxxuoyk"]
+[gd_scene load_steps=12 format=3 uid="uid://dn24vabxxuoyk"]
 
 [ext_resource type="Script" uid="uid://c5e6gv87mfeap" path="res://node_2d.gd" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://bjbtg7vmgu5co" path="res://button.gd" id="1_wtcfe"]
@@ -9,22 +9,24 @@
 [ext_resource type="Script" uid="uid://cogvnuy2os55b" path="res://upgrade_6.gd" id="7_d21ai"]
 [ext_resource type="Script" uid="uid://d1vfm1qkpv7na" path="res://upgrade_7.gd" id="8_rj586"]
 [ext_resource type="Script" uid="uid://b5c3xph2njm62" path="res://upgrade_8.gd" id="9_4d7sh"]
+[ext_resource type="Script" uid="uid://dbd8t6f7movt6" path="res://upgrade_9.gd" id="10_ir8iy"]
+[ext_resource type="Script" uid="uid://dhup52mlvkimn" path="res://clicker.gd" id="11_hqns4"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_0e48y")
 
 [node name="TuffPointDisplay" type="Label" parent="."]
 offset_left = 23.0
-offset_top = 575.0
+offset_top = 548.0
 offset_right = 95.82611
-offset_bottom = 600.0
+offset_bottom = 573.0
 text = "Tuff: 0"
 
 [node name="67PointDisplay" type="Label" parent="."]
 offset_left = 23.0
-offset_top = 602.0
+offset_top = 575.0
 offset_right = 95.82611
-offset_bottom = 627.0
+offset_bottom = 600.0
 text = "67: 0"
 
 [node name="Upgrade1" type="Button" parent="."]
@@ -223,17 +225,17 @@ autostart = true
 
 [node name="TimePlayedDisplay" type="Label" parent="."]
 offset_left = 23.0
-offset_top = 550.0
-offset_right = 95.82611
-offset_bottom = 575.0
+offset_top = 523.0
+offset_right = 135.0
+offset_bottom = 548.0
 text = "Time Played: 0"
 
 [node name="TimePlayedDisplay2" type="Label" parent="."]
 offset_left = 23.0
-offset_top = 524.0
+offset_top = 497.0
 offset_right = 135.0
-offset_bottom = 549.0
-text = "Version: v0.1.8"
+offset_bottom = 522.0
+text = "Version: v0.2.0"
 
 [node name="Upgrade6" type="Button" parent="."]
 offset_left = 217.0
@@ -349,6 +351,60 @@ text = "(x5)"
 
 [node name="Timer" type="Timer" parent="Upgrade8"]
 
+[node name="Upgrade9" type="Button" parent="."]
+offset_left = 694.0
+offset_top = 66.0
+offset_right = 819.0
+offset_bottom = 191.0
+theme_override_font_sizes/font_size = 16
+text = "67 4"
+script = ExtResource("10_ir8iy")
+
+[node name="Price" type="Label" parent="Upgrade9"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 72.0
+offset_right = 124.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 12
+text = "Click Click Click"
+
+[node name="Description" type="Label" parent="Upgrade9"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 34.0
+offset_right = 124.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 12
+text = "Price: 100 six seven"
+
+[node name="Math" type="Label" parent="Upgrade9/Description"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 58.0
+offset_right = 179.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 12
+text = "(Click button)"
+
+[node name="Timer" type="Timer" parent="Upgrade9"]
+
+[node name="Clicker" type="Button" parent="."]
+offset_left = 477.0
+offset_top = 407.0
+offset_right = 681.0
+offset_bottom = 611.0
+theme_override_font_sizes/font_size = 16
+text = "Click me"
+script = ExtResource("11_hqns4")
+
+[node name="AdrenalinePointDisplay" type="Label" parent="."]
+offset_left = 23.0
+offset_top = 598.0
+offset_right = 95.82611
+offset_bottom = 623.0
+text = "Adrenaline: 0"
+
 [connection signal="pressed" from="Upgrade1" to="Upgrade1" method="_on_pressed"]
 [connection signal="timeout" from="Upgrade1/Timer" to="Upgrade1" method="_on_timer_timeout"]
 [connection signal="pressed" from="Upgrade4" to="Upgrade4" method="_on_pressed"]
@@ -366,3 +422,6 @@ text = "(x5)"
 [connection signal="timeout" from="Upgrade7/Timer" to="Upgrade7" method="_on_timer_timeout"]
 [connection signal="pressed" from="Upgrade8" to="Upgrade8" method="_on_pressed"]
 [connection signal="timeout" from="Upgrade8/Timer" to="Upgrade8" method="_on_timer_timeout"]
+[connection signal="pressed" from="Upgrade9" to="Upgrade9" method="_on_pressed"]
+[connection signal="timeout" from="Upgrade9/Timer" to="Upgrade9" method="_on_timer_timeout"]
+[connection signal="pressed" from="Clicker" to="Clicker" method="_on_pressed"]
