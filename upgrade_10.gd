@@ -6,16 +6,14 @@ var price = 100
 
 func _ready():
 	firsttime = true
-	get_parent().get_node("Clicker").visible = false
-	get_parent().get_node("Upgrade10").visible = false
+	
 
 func _on_pressed() -> void:
 	if firsttime == true and get_parent().sixSeven >= price:
 		firsttime = false
 		purchased = true # this currently does nothing
 		self.disabled = true # disable button so it cannot be clicked anymore
-		get_parent().get_node("Clicker").visible = true
-		get_parent().get_node("Upgrade10").visible = true
+		get_parent().multiplierDopamine += log(67)
 		get_parent().sixSeven -= price
 	else:
 		print("poor")

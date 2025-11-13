@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dn24vabxxuoyk"]
+[gd_scene load_steps=13 format=3 uid="uid://dn24vabxxuoyk"]
 
 [ext_resource type="Script" uid="uid://c5e6gv87mfeap" path="res://node_2d.gd" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://bjbtg7vmgu5co" path="res://button.gd" id="1_wtcfe"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://b5c3xph2njm62" path="res://upgrade_8.gd" id="9_4d7sh"]
 [ext_resource type="Script" uid="uid://dbd8t6f7movt6" path="res://upgrade_9.gd" id="10_ir8iy"]
 [ext_resource type="Script" uid="uid://dhup52mlvkimn" path="res://clicker.gd" id="11_hqns4"]
+[ext_resource type="Script" uid="uid://coviq4r2pxrwk" path="res://upgrade_10.gd" id="11_x0ka3"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_0e48y")
@@ -30,10 +31,10 @@ offset_bottom = 600.0
 text = "67: 0"
 
 [node name="Upgrade1" type="Button" parent="."]
-offset_left = 379.0
-offset_top = 239.0
-offset_right = 504.0
-offset_bottom = 364.0
+offset_left = 175.0
+offset_top = 185.0
+offset_right = 300.0
+offset_bottom = 310.0
 theme_override_font_sizes/font_size = 16
 text = "tuff 1"
 script = ExtResource("1_wtcfe")
@@ -68,10 +69,10 @@ text = "(1/s)"
 [node name="Timer" type="Timer" parent="Upgrade1"]
 
 [node name="Upgrade4" type="Button" parent="."]
-offset_left = 379.0
-offset_top = 66.0
-offset_right = 504.0
-offset_bottom = 191.0
+offset_left = 175.0
+offset_top = 12.0
+offset_right = 300.0
+offset_bottom = 137.0
 theme_override_font_sizes/font_size = 16
 text = "67 1"
 script = ExtResource("3_q6r6c")
@@ -107,10 +108,10 @@ text = "(10k tuff = 0.1 67)"
 [node name="Timer" type="Timer" parent="Upgrade4"]
 
 [node name="Upgrade5" type="Button" parent="."]
-offset_left = 535.0
-offset_top = 66.0
-offset_right = 660.0
-offset_bottom = 191.0
+offset_left = 331.0
+offset_top = 12.0
+offset_right = 456.0
+offset_bottom = 137.0
 theme_override_font_sizes/font_size = 16
 text = "67 2"
 script = ExtResource("4_kdubu")
@@ -145,10 +146,10 @@ text = "(67/1000)"
 [node name="Timer" type="Timer" parent="Upgrade5"]
 
 [node name="Upgrade2" type="Button" parent="."]
-offset_left = 535.0
-offset_top = 239.0
-offset_right = 660.0
-offset_bottom = 364.0
+offset_left = 331.0
+offset_top = 185.0
+offset_right = 456.0
+offset_bottom = 310.0
 theme_override_font_sizes/font_size = 16
 text = "tuff 2"
 script = ExtResource("3_0hol4")
@@ -183,10 +184,10 @@ text = "(x2)"
 [node name="Timer" type="Timer" parent="Upgrade2"]
 
 [node name="Upgrade3" type="Button" parent="."]
-offset_left = 217.0
-offset_top = 239.0
-offset_right = 342.0
-offset_bottom = 364.0
+offset_left = 13.0
+offset_top = 185.0
+offset_right = 138.0
+offset_bottom = 310.0
 theme_override_font_sizes/font_size = 16
 text = "tuff 5"
 script = ExtResource("3_epypp")
@@ -216,32 +217,15 @@ offset_top = 55.0
 offset_right = 96.0
 offset_bottom = 78.0
 theme_override_font_sizes/font_size = 12
-text = "(tuff=tuff/1000)"
+text = "(tuff=tuff/5000)"
 
 [node name="Timer" type="Timer" parent="Upgrade3"]
 
-[node name="TimePlayedCounter" type="Timer" parent="."]
-autostart = true
-
-[node name="TimePlayedDisplay" type="Label" parent="."]
-offset_left = 23.0
-offset_top = 523.0
-offset_right = 135.0
-offset_bottom = 548.0
-text = "Time Played: 0"
-
-[node name="TimePlayedDisplay2" type="Label" parent="."]
-offset_left = 23.0
-offset_top = 497.0
-offset_right = 135.0
-offset_bottom = 522.0
-text = "Version: v0.2.0"
-
 [node name="Upgrade6" type="Button" parent="."]
-offset_left = 217.0
-offset_top = 66.0
-offset_right = 342.0
-offset_bottom = 191.0
+offset_left = 13.0
+offset_top = 12.0
+offset_right = 138.0
+offset_bottom = 137.0
 theme_override_font_sizes/font_size = 16
 text = "67 3"
 script = ExtResource("7_d21ai")
@@ -276,10 +260,10 @@ text = "(67gain*2)"
 [node name="Timer" type="Timer" parent="Upgrade6"]
 
 [node name="Upgrade7" type="Button" parent="."]
-offset_left = 695.0
-offset_top = 239.0
-offset_right = 820.0
-offset_bottom = 364.0
+offset_left = 491.0
+offset_top = 185.0
+offset_right = 616.0
+offset_bottom = 310.0
 theme_override_font_sizes/font_size = 16
 text = "tuff 3"
 script = ExtResource("8_rj586")
@@ -314,10 +298,10 @@ text = "(x3)"
 [node name="Timer" type="Timer" parent="Upgrade7"]
 
 [node name="Upgrade8" type="Button" parent="."]
-offset_left = 854.0
-offset_top = 239.0
-offset_right = 979.0
-offset_bottom = 364.0
+offset_left = 650.0
+offset_top = 185.0
+offset_right = 775.0
+offset_bottom = 310.0
 theme_override_font_sizes/font_size = 16
 text = "tuff 4"
 script = ExtResource("9_4d7sh")
@@ -352,10 +336,10 @@ text = "(x5)"
 [node name="Timer" type="Timer" parent="Upgrade8"]
 
 [node name="Upgrade9" type="Button" parent="."]
-offset_left = 694.0
-offset_top = 66.0
-offset_right = 819.0
-offset_bottom = 191.0
+offset_left = 490.0
+offset_top = 12.0
+offset_right = 615.0
+offset_bottom = 137.0
 theme_override_font_sizes/font_size = 16
 text = "67 4"
 script = ExtResource("10_ir8iy")
@@ -389,6 +373,44 @@ text = "(Click button)"
 
 [node name="Timer" type="Timer" parent="Upgrade9"]
 
+[node name="Upgrade10" type="Button" parent="."]
+offset_left = 740.0
+offset_top = 408.0
+offset_right = 865.0
+offset_bottom = 533.0
+theme_override_font_sizes/font_size = 16
+text = "Dopamine 1"
+script = ExtResource("11_x0ka3")
+
+[node name="Price" type="Label" parent="Upgrade10"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 72.0
+offset_right = 124.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 12
+text = "Get encouragement"
+
+[node name="Description" type="Label" parent="Upgrade10"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 34.0
+offset_right = 124.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 12
+text = "Price: 67 Dopamine"
+
+[node name="Math" type="Label" parent="Upgrade10/Description"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 58.0
+offset_right = 179.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 12
+text = "(tuffx(log(67))"
+
+[node name="Timer" type="Timer" parent="Upgrade10"]
+
 [node name="Clicker" type="Button" parent="."]
 offset_left = 477.0
 offset_top = 407.0
@@ -403,7 +425,24 @@ offset_left = 23.0
 offset_top = 598.0
 offset_right = 95.82611
 offset_bottom = 623.0
-text = "Adrenaline: 0"
+text = "Dopamine: 0"
+
+[node name="TimePlayedCounter" type="Timer" parent="."]
+autostart = true
+
+[node name="TimePlayedDisplay" type="Label" parent="."]
+offset_left = 23.0
+offset_top = 523.0
+offset_right = 135.0
+offset_bottom = 548.0
+text = "Time Played: 0"
+
+[node name="TimePlayedDisplay2" type="Label" parent="."]
+offset_left = 23.0
+offset_top = 497.0
+offset_right = 135.0
+offset_bottom = 522.0
+text = "Version: v0.2.0"
 
 [connection signal="pressed" from="Upgrade1" to="Upgrade1" method="_on_pressed"]
 [connection signal="timeout" from="Upgrade1/Timer" to="Upgrade1" method="_on_timer_timeout"]
@@ -415,7 +454,6 @@ text = "Adrenaline: 0"
 [connection signal="timeout" from="Upgrade2/Timer" to="Upgrade2" method="_on_timer_timeout"]
 [connection signal="pressed" from="Upgrade3" to="Upgrade3" method="_on_pressed"]
 [connection signal="timeout" from="Upgrade3/Timer" to="Upgrade3" method="_on_timer_timeout"]
-[connection signal="timeout" from="TimePlayedCounter" to="." method="_on_played_timeout"]
 [connection signal="pressed" from="Upgrade6" to="Upgrade6" method="_on_pressed"]
 [connection signal="timeout" from="Upgrade6/Timer" to="Upgrade6" method="_on_timer_timeout"]
 [connection signal="pressed" from="Upgrade7" to="Upgrade7" method="_on_pressed"]
@@ -424,4 +462,7 @@ text = "Adrenaline: 0"
 [connection signal="timeout" from="Upgrade8/Timer" to="Upgrade8" method="_on_timer_timeout"]
 [connection signal="pressed" from="Upgrade9" to="Upgrade9" method="_on_pressed"]
 [connection signal="timeout" from="Upgrade9/Timer" to="Upgrade9" method="_on_timer_timeout"]
+[connection signal="pressed" from="Upgrade10" to="Upgrade10" method="_on_pressed"]
+[connection signal="timeout" from="Upgrade10/Timer" to="Upgrade10" method="_on_timer_timeout"]
 [connection signal="pressed" from="Clicker" to="Clicker" method="_on_pressed"]
+[connection signal="timeout" from="TimePlayedCounter" to="." method="_on_played_timeout"]

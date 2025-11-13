@@ -1,7 +1,7 @@
 extends Node2D
 
-var tuff = 9999999999.0
-var sixSeven = 100.0
+var tuff = 0.0
+var sixSeven = 0.0
 var adrenaline = 0.0
 
 var timePlayed = 0.0
@@ -10,14 +10,24 @@ var perSecondXSixSeven = 1.0
 var basePerSecondX = 1.0
 var multiplier = 1.0
 var multiplierSixSeven = 1.0
+var multiplierDopamine = 1.0
 var gain2multiplier = 1.0
 var reset = false
+
+func _input(event):
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_Z:
+			tuff += 1000
+			sixSeven += 1000
+			adrenaline += 1000
+		if event.keycode == KEY_ESCAPE:
+			get_tree().quit()
 
 func _process(dt):
 	var tuffDisplay = get_node("TuffPointDisplay") # Set variables for labels for easier access
 	var sixSevenDisplay = get_node("67PointDisplay") # same here
 	var adrenalineDisplay = get_node("AdrenalinePointDisplay") # same here
-	perSecondX = basePerSecondX * gain2multiplier * multiplierSixSeven * multiplier
+	perSecondX = basePerSecondX * gain2multiplier * multiplierSixSeven * multiplierDopamine * multiplier
 	var suffixes = ["","K","M","B","T","Qa","Qn","Sx","Sp","Oc","No","De","Ude","DDe","TDe","QDe","QnDe","SxDe","SpDe","OcDe","NoDe","Vg","UVg","DVg","TVg","QVg","QnVg","SxVg","SpVg","OcVg", "NoVg","Tg","UTg", "DTg", "TTg", "QTg", "QnTg", "SxTg", "SpTg", "OcTg", "NoTg",
 "Qd", "UQd","DQd","TQd","QQd","QnQd","SxQd","SpQd","OcQd","NoQd", "QnD", "UQnD", "DQnD", "TQnD", "QQnD", "QnQnD", "SxQnD", "SpQnD", "OcQnD", "NoQnD",
 "SxD", "USxD", "DSxD", "TSxD", "QSxD", "QnSxD", "SxSxD", "SpSxD", "OcSxD", "NoSxD",
@@ -53,7 +63,7 @@ func _process(dt):
 	if textAdrenaline.ends_with(".0"):
 		textAdrenaline = textAdrenaline.substr(0,textAdrenaline.length()-2)
 	textAdrenaline += suffixes[i3]
-	adrenalineDisplay.text = "Adrenaline: " + textAdrenaline # Display text
+	adrenalineDisplay.text = "Dopamine: " + textAdrenaline # Display text
 
 """func abbreviate_number(num: float) -> String:
 	var suffixes = ["", "K", "M", "B", "T"]
@@ -65,7 +75,6 @@ func _process(dt):
 	if tuff.ends_with(".0"):
 		tuff = tuff.substr(0, tuff.length() - 2)
 	return tuff + suffixes[i]"""
-
 
 func _on_played_timeout() -> void:
 	var lbl = get_node("TimePlayedDisplay")

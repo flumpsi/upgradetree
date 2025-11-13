@@ -2,7 +2,7 @@ extends Button
 
 var firsttime
 var purchased
-var timegive = 10000
+var timegive = 1000
 
 func _ready():
 	firsttime = true
