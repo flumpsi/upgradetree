@@ -20,6 +20,7 @@ var sixSeven = 0.0
 var adrenaline = 0.0
 
 var timePlayed = 0
+var cheated = false
 var perSecondX = basePerSecondX
 var perSecondXSixSeven = 1.0
 var basePerSecondX = 1.0
@@ -32,16 +33,19 @@ var reset = false
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_Z:
-			tuff += 1000
-			sixSeven += 1000
-			adrenaline += 1000
+			tuff += 100000
+			sixSeven += 100000
+			adrenaline += 100000
+			cheated = true
 		if event.keycode == KEY_ESCAPE:
 			get_tree().quit()
 
 func _process(dt):
+	var timeStr = "%d:%02d:%02d" % [timePlayed/3600, (timePlayed/60)%60, timePlayed%60]
 	var tuffDisplay = get_node("TuffPointDisplay") # Set variables for labels for easier access
 	var sixSevenDisplay = get_node("67PointDisplay") # same here
 	var adrenalineDisplay = get_node("AdrenalinePointDisplay") # same here
+	var timeWasDisplay = get_node("timeWas")
 	perSecondX = basePerSecondX * gain2multiplier * multiplierSixSeven * multiplierDopamine * multiplier
 	var suffixes = ["","K","M","B","T","Qa","Qn","Sx","Sp","Oc","No","De","Ude","DDe","TDe","QDe","QnDe","SxDe","SpDe","OcDe","NoDe","Vg","UVg","DVg","TVg","QVg","QnVg","SxVg","SpVg","OcVg", "NoVg","Tg","UTg", "DTg", "TTg", "QTg", "QnTg", "SxTg", "SpTg", "OcTg", "NoTg",
 "Qd", "UQd","DQd","TQd","QQd","QnQd","SxQd","SpQd","OcQd","NoQd", "QnD", "UQnD", "DQnD", "TQnD", "QQnD", "QnQnD", "SxQnD", "SpQnD", "OcQnD", "NoQnD",
@@ -79,6 +83,8 @@ func _process(dt):
 		textAdrenaline = textAdrenaline.substr(0,textAdrenaline.length()-2)
 	textAdrenaline += suffixes[i3]
 	adrenalineDisplay.text = "Dopamine: " + textAdrenaline # Display text
+	timeWasDisplay.text = "Your time was: " + timeStr
+	
 
 """func abbreviate_number(num: float) -> String:
 	var suffixes = ["", "K", "M", "B", "T"]

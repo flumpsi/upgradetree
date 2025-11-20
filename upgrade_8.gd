@@ -21,9 +21,12 @@ var price = 50
 
 func _ready():
 	firsttime = true
+	self.visible = false
 
 func _process(dt):
 	get_node("Purchased?").visible = not firsttime
+	if get_parent().get_node("Upgrade7").firsttime == false:
+		self.visible = true
 	if get_parent().reset == true:
 		firsttime = true
 		self.disabled = false

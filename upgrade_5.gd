@@ -21,9 +21,12 @@ var price = 0.5
 
 func _ready():
 	firsttime = true
+	self.visible = false
 
 func _process(dt):
 	get_node("Purchased?").visible = not firsttime
+	if get_parent().get_node("Upgrade3").firsttime == false:
+		self.visible = true
 
 func _on_pressed() -> void:
 	if firsttime == true and get_parent().sixSeven >= price:
@@ -33,14 +36,15 @@ func _on_pressed() -> void:
 		var timer = get_node("Timer")
 		timer.start()
 		get_parent().sixSeven -= price
+		get_parent().multiplierSixSeven += (get_parent().sixSeven / 10000)
 	else:
 		print("poor")
 
-func _on_timer_timeout() -> void:
+#func _on_timer_timeout() -> void:
 	# this doesn't work, don't uncomment
 	# get_parent().perSecondX += get_parent().sixSeven
 	
 	# This works i guess
-	get_parent().multiplierSixSeven += (get_parent().sixSeven / 1000)
+	
 	# print("six seven: " + str(get_parent().perSecondX + get_parent().sixSeven))
 	

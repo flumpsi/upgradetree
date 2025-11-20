@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://b5c3xph2njm62" path="res://upgrade_8.gd" id="9_4d7sh"]
 [ext_resource type="Script" uid="uid://dbd8t6f7movt6" path="res://upgrade_9.gd" id="10_ir8iy"]
 [ext_resource type="Script" uid="uid://dhup52mlvkimn" path="res://clicker.gd" id="11_hqns4"]
-[ext_resource type="Script" uid="uid://coviq4r2pxrwk" path="res://upgrade_10.gd" id="11_x0ka3"]
+[ext_resource type="Script" path="res://upgrade_10.gd" id="11_x0ka3"]
 [ext_resource type="Script" uid="uid://clad10wq83rmc" path="res://upgrade_11.gd" id="15_ta5nu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x0ka3"]
@@ -33,8 +33,8 @@ Label/fonts/font = null
 script = ExtResource("1_0e48y")
 
 [node name="Backgroundtex" type="Sprite2D" parent="."]
-position = Vector2(576, 324.00003)
-scale = Vector2(23.039997, 12.960001)
+position = Vector2(601.0001, 343.9999)
+scale = Vector2(69.14001, 39.080006)
 texture = ExtResource("2_d2bti")
 
 [node name="TuffPointDisplay" type="Label" parent="."]
@@ -162,13 +162,13 @@ text = "Turn tuff into 67"
 
 [node name="Description" type="Label" parent="Upgrade4"]
 layout_mode = 0
-offset_left = 2.0
+offset_left = 8.0
 offset_top = 15.0
-offset_right = 124.0
+offset_right = 130.0
 offset_bottom = 52.0
 theme_override_colors/font_color = Color(0.60784316, 0.7372549, 0.05882353, 1)
 theme_override_font_sizes/font_size = 12
-text = "Price: Minimum 10k
+text = "Price: Minimum 1k
  tuff"
 
 [node name="Math" type="Label" parent="Upgrade4/Description"]
@@ -179,7 +179,7 @@ offset_right = 108.0
 offset_bottom = 98.0
 theme_override_colors/font_color = Color(0.60784316, 0.7372549, 0.05882353, 1)
 theme_override_font_sizes/font_size = 12
-text = "(10k tuff = 0.1 67)"
+text = "(1k tuff = 0.1 67)"
 
 [node name="Timer" type="Timer" parent="Upgrade4"]
 
@@ -850,7 +850,7 @@ offset_top = 497.0
 offset_right = 135.0
 offset_bottom = 522.0
 theme_override_colors/font_color = Color(0.60784316, 0.7372549, 0.05882353, 1)
-text = "Version: v0.2.0"
+text = "Version: v0.3.0"
 
 [node name="Copyright" type="Label" parent="."]
 offset_left = 973.0
@@ -860,6 +860,39 @@ offset_bottom = 643.0
 theme_override_colors/font_color = Color(0.60784316, 0.7372549, 0.05882353, 1)
 text = "flumpsi©
 licenced under GPL 3.0"
+
+[node name="Backgroundtex2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(576, 324.00003)
+scale = Vector2(23.039997, 12.960001)
+texture = ExtResource("2_d2bti")
+
+[node name="timeWas" type="Label" parent="."]
+visible = false
+offset_left = 127.0
+offset_top = 358.0
+offset_right = 879.0
+offset_bottom = 495.0
+theme_override_font_sizes/font_size = 50
+text = "Your time was: "
+
+[node name="wonText" type="Label" parent="."]
+visible = false
+offset_left = 343.0
+offset_top = 233.0
+offset_right = 787.0
+offset_bottom = 370.0
+theme_override_font_sizes/font_size = 100
+text = "You won!"
+
+[node name="cheated" type="Label" parent="."]
+visible = false
+offset_left = 331.0
+offset_top = 524.0
+offset_right = 794.0
+offset_bottom = 593.0
+theme_override_font_sizes/font_size = 50
+text = "Did you cheat?: Yes"
 
 [connection signal="pressed" from="Upgrade1" to="Upgrade1" method="_on_pressed"]
 [connection signal="timeout" from="Upgrade1/Timer" to="Upgrade1" method="_on_timer_timeout"]

@@ -23,9 +23,12 @@ var price = 100
 
 func _ready():
 	firsttime = true
+	self.visible = false
 
 func _process(dt):
 	get_node("Purchased?").visible = not firsttime
+	if get_parent().get_node("Upgrade8").firsttime == false:
+		self.visible = true
 	if get_parent().reset == true:
 		var timer = get_node("Timer")
 		timer.stop()
@@ -45,7 +48,7 @@ func _on_pressed() -> void:
 
 func _on_timer_timeout() -> void:
 	# note, ^ is ** in gdscript
-	get_parent().gain2multiplier = (get_parent().tuff / 5000) # Use + for tuff boost itself math func. This is also a shit line of code, could be way better
+	get_parent().gain2multiplier += (get_parent().tuff / 10000)
 	# get_parent().perSecondX *= min(get_parent().tuff ** 0.16, 1) # Or use * for tuff boost itself math func,
 	# this one does nothing as result is just 1 and it is very self-explanatory what multiplication with 1x does.
 	# get_parent().perSecondX *= get_parent().tuff ** 0.16 # You also have this one which just gives a insane amount of tuff.

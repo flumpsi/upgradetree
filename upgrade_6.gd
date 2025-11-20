@@ -21,9 +21,12 @@ var price = 10
 
 func _ready():
 	firsttime = true
+	self.visible = false
 
 func _process(dt):
 	get_node("Purchased?").visible = not firsttime
+	if get_parent().get_node("Upgrade5").firsttime == false:
+		self.visible = true
 
 func _on_pressed() -> void:
 	if firsttime == true and get_parent().sixSeven >= price:

@@ -22,20 +22,31 @@ var price2 = 100000000000000
 var price3 = 10000000000000
 
 func _ready():
+	self.visible = false
+	get_parent().get_node("Backgroundtex2").visible = false
+	get_parent().get_node("timeWas").visible = false
+	get_parent().get_node("wonText").visible = false
 	firsttime = true
 
 func _process(dt):
 	get_node("Purchased?").visible = not firsttime
+	if get_parent().get_node("Upgrade10").firsttime == false:
+		self.visible = true
 
 func _on_pressed() -> void:
 	if firsttime == true and get_parent().sixSeven >= price3 and get_parent().tuff >= price2 and get_parent().adrenaline >= price1:
 		firsttime = false
 		purchased = true # this currently does nothing
 		self.disabled = true # disable button so it cannot be clicked anymore
-		get_parent().multiplierDopamine += log(67)
 		get_parent().adrenaline -= price1
 		get_parent().tuff -= price2
 		get_parent().sixSeven -= price3
+		get_parent().get_node("Backgroundtex2").visible = true
+		get_parent().get_node("timeWas").visible = true
+		get_parent().get_node("wonText").visible = true
+		if get_parent().cheated == true:
+			get_parent().get_node("cheated")
+		get_parent().get_node("TimePlayedCounter").stop()
 	else:
 		print("poor")
 
