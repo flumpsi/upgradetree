@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dn24vabxxuoyk"]
+[gd_scene load_steps=21 format=3 uid="uid://dn24vabxxuoyk"]
 
 [ext_resource type="Script" uid="uid://c5e6gv87mfeap" path="res://node_2d.gd" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://bjbtg7vmgu5co" path="res://button.gd" id="1_wtcfe"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://dbd8t6f7movt6" path="res://upgrade_9.gd" id="10_ir8iy"]
 [ext_resource type="Script" uid="uid://dhup52mlvkimn" path="res://clicker.gd" id="11_hqns4"]
 [ext_resource type="Script" uid="uid://coviq4r2pxrwk" path="res://upgrade_10.gd" id="11_x0ka3"]
+[ext_resource type="Script" uid="uid://clad10wq83rmc" path="res://upgrade_11.gd" id="15_ta5nu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x0ka3"]
 
@@ -739,6 +740,66 @@ theme_override_colors/font_color = Color(0.05882353, 0.21960784, 0.05882353, 1)
 theme_override_font_sizes/font_size = 30
 text = "Purchased!"
 
+[node name="Upgrade11" type="Button" parent="."]
+offset_left = 924.0
+offset_top = 118.0
+offset_right = 1049.0
+offset_bottom = 243.0
+theme_override_font_sizes/font_size = 16
+text = "Dopamine 1"
+script = ExtResource("15_ta5nu")
+
+[node name="TextureRect" type="TextureRect" parent="Upgrade11"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 125.0
+offset_bottom = 125.0
+texture = ExtResource("3_0h7mo")
+
+[node name="Name" type="Label" parent="Upgrade11"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 60.0
+offset_right = 116.0
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(0.60784316, 0.7372549, 0.05882353, 1)
+text = "Final upgrade"
+
+[node name="Price" type="Label" parent="Upgrade11"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 86.0
+offset_right = 133.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(0.60784316, 0.7372549, 0.05882353, 1)
+theme_override_font_sizes/font_size = 12
+text = "Finish the game"
+
+[node name="Description" type="Label" parent="Upgrade11"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 220.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0.60784316, 0.7372549, 0.05882353, 1)
+theme_override_font_sizes/font_size = 12
+text = "Price: 200 dopamine
+100T tuff
+ and 10T 67"
+
+[node name="Timer" type="Timer" parent="Upgrade11"]
+
+[node name="Purchased?" type="Label" parent="Upgrade11"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = -10.0
+offset_right = 182.0
+offset_bottom = 32.0
+rotation = 0.791126
+theme_override_colors/font_color = Color(0.05882353, 0.21960784, 0.05882353, 1)
+theme_override_font_sizes/font_size = 30
+text = "Purchased!"
+
 [node name="Clicker" type="Button" parent="."]
 offset_left = 477.0
 offset_top = 407.0
@@ -820,5 +881,7 @@ licenced under GPL 3.0"
 [connection signal="timeout" from="Upgrade9/Timer" to="Upgrade9" method="_on_timer_timeout"]
 [connection signal="pressed" from="Upgrade10" to="Upgrade10" method="_on_pressed"]
 [connection signal="timeout" from="Upgrade10/Timer" to="Upgrade10" method="_on_timer_timeout"]
+[connection signal="pressed" from="Upgrade11" to="Upgrade11" method="_on_pressed"]
+[connection signal="timeout" from="Upgrade11/Timer" to="Upgrade11" method="_on_timer_timeout"]
 [connection signal="pressed" from="Clicker" to="Clicker" method="_on_pressed"]
 [connection signal="timeout" from="TimePlayedCounter" to="." method="_on_played_timeout"]

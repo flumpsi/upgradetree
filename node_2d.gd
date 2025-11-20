@@ -19,7 +19,7 @@ var tuff = 0.0
 var sixSeven = 0.0
 var adrenaline = 0.0
 
-var timePlayed = 0.0
+var timePlayed = 0
 var perSecondX = basePerSecondX
 var perSecondXSixSeven = 1.0
 var basePerSecondX = 1.0
